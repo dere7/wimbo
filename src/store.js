@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"
 import createSagaMiddleware from "redux-saga"
-import counterReducer from "./features/counter"
-import allProductsReducer from "./features/products"
+import songsReducer from "./features/songs"
 import statusReducer from "./features/status"
 import rootSaga from "./sagas"
 
@@ -9,8 +8,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    allProducts: allProductsReducer,
+    songs: songsReducer,
     status: statusReducer,
   },
   middleware: (getDefaultMiddleware) =>
