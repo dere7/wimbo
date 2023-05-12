@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Flex, Text } from "rebass"
 import SongItem from "./SongItem"
 import { useEffect } from "react"
-import { requestFetchSongs } from "../sagas"
+import { requestFetchSongs } from "../features/songs"
 
 const SongsList = () => {
   const songs = useSelector((state) => state.songs)

@@ -11,5 +11,9 @@ const songsSlice = createSlice({
 })
 
 export const { setSongs } = songsSlice.actions
-export const requestSongsFetch = createAction("songs/requestSongsFetch")
+export const requestFetchSongs = createAction("songs/requestFetchSongs")
+export const requestAddSongs = createAction("songs/requestAddSongs")
+export const requestUpdateSong = createAction("songs/requestUpdateSong")
+export const requestDeleteSong = createAction("songs/requestDeleteSong")
+
 export default songsSlice.reducer

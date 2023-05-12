@@ -1,11 +1,37 @@
-import { Box, Heading } from "rebass"
-import Layout from "./components/Layout"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Home from "./screens/Home"
+import AddSong from "./screens/AddSong"
+import Root from "./screens/Root"
+import ErrorPage from "./screens/ErrorPage"
 import { Global, css } from "@emotion/react"
-import SongsList from "./components/SongsList"
+import UpdateSong, { loader as updateSongLoader } from "./screens/UpdateSong"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/songs/add",
+        element: <AddSong />,
+      },
+      {
+        path: "/songs/:id/edit",
+        element: <UpdateSong />,
+        loader: updateSongLoader,
+      },
+    ],
+  },
+])
 
 function App() {
   return (
-    <Layout>
+    <>
       <Global
         styles={css`
           body {
@@ -16,13 +42,8 @@ function App() {
           }
         `}
       />
-      <Box m={4} variant='styles.root'>
-        <Heading as='h1' mb={2} color='primary'>
-          Popular Songs
-        </Heading>
-        <SongsList />
-      </Box>
-    </Layout>
+      <RouterProvider router={router} />
+    </>
   )
 }
 
