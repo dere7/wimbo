@@ -1,0 +1,23 @@
+http://localhost:4000/status
+###
+http://localhost:4000/songs
+
+###
+
+http://localhost:4000/songs/6460c4d9359283cb3f8e60ae
+
+###
+PUT http://localhost:4000/songs/6460c4d9359283cb3f8e60ae
+Content-Type: application/json
+
+{
+  "title": "Clockss"
+}
+
+###
+POST http://localhost:4000/songs
+Content-Type: application/json
+
+{
+  "title": "Clocks"
+}
