@@ -1,6 +1,7 @@
-import { Box, Button, Flex, Heading, Link } from "rebass"
+import { Box, Button, Flex, Heading, Link, Text } from "rebass"
 import Container from "./Container"
 import { Link as RouterLink, useNavigate } from "react-router-dom"
+import { AiOutlinePlus } from "react-icons/ai"
 
 const Nav = () => {
   const navigate = useNavigate()
@@ -19,7 +20,10 @@ const Nav = () => {
             variant='outline'
             sx={{ cursor: "pointer", ":hover": { bg: "ButtonHighlight" } }}
           >
-            Add Song
+            <Flex alignItems='center'>
+              <AiOutlinePlus />
+              <Text ml={2}>Add Song</Text>
+            </Flex>
           </Button>
         </Flex>
       </Container>

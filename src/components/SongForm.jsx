@@ -6,9 +6,10 @@ import { requestAddSongs, requestUpdateSong } from "../features/songs"
 import { useNavigate } from "react-router-dom"
 
 const SongForm = ({ song }) => {
-  const [title, setTitle] = useState(song?.title)
-  const [artist, setArtist] = useState(song?.artist)
-  const [artwork, setArtwork] = useState(song?.artwork)
+  const [title, setTitle] = useState(song?.title || "")
+  const [artist, setArtist] = useState(song?.artist || "")
+  const [artwork, setArtwork] = useState(song?.artwork || "")
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -30,36 +31,44 @@ const SongForm = ({ song }) => {
         <Heading textAlign='center'>{song ? "Update" : "Add"} Song</Heading>
         <Box as='form' onSubmit={handleSubmit}>
           <Box py={2}>
-            <Label htmlFor='title'>Title</Label>
+            <Label htmlFor='title'>Title*</Label>
             <Input
               id='title'
-              name='title'
               value={title}
+              required
               onChange={(e) => setTitle(e.target.value)}
             />
           </Box>
           <Box py={2}>
-            <Label htmlFor='artist'>Artist</Label>
+            <Label htmlFor='artist'>Artist*</Label>
             <Input
               id='artist'
-              name='Artist'
               value={artist}
+              required
               onChange={(e) => setArtist(e.target.value)}
             />
           </Box>
           <Box py={2}>
-            <Label htmlFor='cover'>Cover picture</Label>
+            <Label htmlFor='cover'>Cover picture url</Label>
             <Input
               id='cover'
-              name='picture'
               value={artwork}
               onChange={(e) => setArtwork(e.target.value)}
             />
           </Box>
           <Flex>
-            <Box py={2} ml='auto'>
-              <Button ml='auto'>Add</Button>
-            </Box>
+            <Button
+              sx={{
+                cursor: "pointer",
+                mt: 2,
+                ml: "auto",
+                ":hover": {
+                  opacity: 0.9,
+                },
+              }}
+            >
+              Add
+            </Button>
           </Flex>
         </Box>
       </Card>

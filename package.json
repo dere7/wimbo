@@ -16,13 +16,17 @@
     "@rebass/preset": "^4.0.5",
     "@reduxjs/toolkit": "^1.9.5",
     "emotion-theming": "^10.0.14",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-loader-spinner": "^5.3.4",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.1",
     "rebass": "^4.0.7",
     "redux-saga": "^1.2.3",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.11.0",

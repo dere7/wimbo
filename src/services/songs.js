@@ -1,17 +1,17 @@
 const fetchSongs = async () => {
-  const response = await fetch("/api/songs")
+  const response = await fetch("/songs")
   const songs = response.json()
   return songs
 }
 
 const getSong = async (id) => {
-  const response = await fetch(`/api/songs/${id}`)
+  const response = await fetch(`/songs/${id}`)
   const song = response.json()
   return song
 }
 
 const addSong = async (data) => {
-  const response = await fetch(`/api/songs`, {
+  const response = await fetch(`/songs`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const addSong = async (data) => {
 }
 
 const updateSong = async (id, data) => {
-  const response = await fetch(`/api/songs/${id}`, {
+  const response = await fetch(`/songs/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -35,11 +35,9 @@ const updateSong = async (id, data) => {
 }
 
 const deleteSong = async (id) => {
-  const response = await fetch(`/api/songs/${id}`, {
+  await fetch(`/songs/${id}`, {
     method: "DELETE",
   })
-  const song = response.json()
-  return song
 }
 
 const songsService = {
