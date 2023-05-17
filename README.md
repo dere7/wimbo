@@ -6,6 +6,16 @@
 
 you can find the deployed app [here](https://wimbo.fly.dev)
 
+## Getting Started
+
+Before you start to work on this project make sure if you have latest version of Node.js and Yarn and follow the following procedures.
+```bash
+yarn && cd api; yarn
+echo "<your mongodb uri>" > .env
+yarn start # start api
+cd .. && yarn dev # on another terminal to start vite
+```
+
 ## API
 
 - `GET /songs`
