@@ -67,7 +67,7 @@ const SongForm = ({ song }) => {
                 },
               }}
             >
-              Add
+              {song ? "Add" : "Update"}
             </Button>
           </Flex>
         </Box>
